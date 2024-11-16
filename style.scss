@@ -23,6 +23,10 @@ body {
       color: #FF5733;
       cursor: pointer;
       border-radius: 10px;
+      a{
+        text-decoration: none;
+        color: #FF5733;
+      }
     }
   }
   
@@ -55,6 +59,9 @@ body {
         height: 400px;
         object-fit: cover;
         border-radius: 10px;
+        @media(max-width: 767px){
+            height: 250px;
+        }
       }
   
       .overlay {
@@ -67,6 +74,11 @@ body {
         padding: 0.5rem 1rem;
         font-size: 1.5rem;
         border-radius: 10px;
+        @media(max-width: 767px){
+         width: 150px;
+         font-size: 18px;
+         text-align: center;
+      }
       }
     }
   }
@@ -77,6 +89,10 @@ body {
       justify-content: center;
       flex-direction: column;
       height: 450px;
+      @media(max-width: 767px){
+        height: auto;
+        margin-top: 30px;
+    }
     h1{
       margin: 0;
     }
@@ -96,6 +112,11 @@ body {
     background: #333333;
     padding-top: 10px;
     height: 350px;
+      @media(max-width: 767px){
+          height: 100%;
+          padding-bottom: 40px;
+      }
+
     .visitUs{
       display: flex;
       flex-direction: row;
@@ -103,10 +124,17 @@ body {
       align-items: center;
       gap: 20px;
       margin: 0 20px;
+      @media(max-width: 767px){
+        flex-direction: column;
+    }
       .address_box{
         background: #fff;
         border-radius: 10px;
         padding: 20px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
         .openTime{
           padding-bottom: 20px;
         }
@@ -169,6 +197,10 @@ body {
       border-radius: 10px;
       width: 400px;
       position: relative;
+      @media(max-width: 767px){
+        bottom: 10%;
+        width: 300px;
+      }
   
       .close-btn {
         position: absolute;

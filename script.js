@@ -35,7 +35,7 @@ document.addEventListener('DOMContentLoaded', () => {
         `;
         serviceBox.querySelector('button').addEventListener('click', () => {
           selectedServices.push(service);
-          alert(`${service.name} added to checkout.`);
+          // alert(`${service.name} added to checkout.`);
         });
         servicesList.appendChild(serviceBox);
       });

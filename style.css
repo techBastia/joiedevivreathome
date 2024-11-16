@@ -19,19 +19,19 @@ body {
   padding: 0.5rem 1rem;
   background-color: #fff;
   border: none;
-  color: #FF5733;
+  color: #ff5733;
   cursor: pointer;
   border-radius: 10px;
 }
 .header .actions button a {
   text-decoration: none;
-  color: #FF5733;
+  color: #ff5733;
 }
 
 .heading {
   text-align: center;
   font-size: 34px;
-  color: #FF5733;
+  color: #ff5733;
 }
 
 .hero {
@@ -87,8 +87,8 @@ body {
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  background-color: #FFFFFF;
-  color: #FF5733;
+  background-color: #ffffff;
+  color: #ff5733;
   padding: 0.5rem 1rem;
   font-size: 1.5rem;
   border-radius: 10px;
@@ -125,13 +125,13 @@ body {
   font-size: 22px;
 }
 .about p .name {
-  color: #FF5733;
+  color: #ff5733;
 }
 
 .visitUs_wrapper {
   background: #333333;
   padding-top: 10px;
-  height: 350px;
+  height: 380px;
 }
 @media (max-width: 767px) {
   .visitUs_wrapper {
@@ -160,6 +160,7 @@ body {
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  height: 200px;
 }
 .visitUs_wrapper .visitUs .address_box .openTime {
   padding-bottom: 20px;
@@ -181,7 +182,7 @@ body {
 }
 .social .fab {
   font-size: 40px; /* Adjust the font size */
-  color: #E4405F; /* Instagram's signature pink color */
+  color: #e4405f; /* Instagram's signature pink color */
   transition: transform 0.3s ease;
 }
 .social .fab:hover {

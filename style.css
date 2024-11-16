@@ -204,6 +204,7 @@ body {
 @media (max-width: 767px) {
   .footer .copyright {
     text-align: center;
+    font-size: 14px;
   }
 }
 

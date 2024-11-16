@@ -1,87 +1,95 @@
-document.addEventListener('DOMContentLoaded', () => {
-    const mensServices = [
-      { name: "Men's Haircut", price: "$20", image: "haircut.jpg" },
-      { name: "Shaving", price: "$15", image: "shaving.jpg" },
-    ];
-  
-    const womensServices = [
-      { name: "Women's Haircut", price: "$25", image: "women_haircut.jpg" },
-      { name: "Facial", price: "$30", image: "facial.jpg" },
-    ];
-  
-    let selectedServices = [];
-  
-    const mensServicesButton = document.getElementById('mens-services');
-    const womensServicesButton = document.getElementById('womens-services');
-    const serviceModal = document.getElementById('service-modal');
-    const servicesList = document.getElementById('services-list');
-    const modalTitle = document.getElementById('modal-title');
-    const checkoutModal = document.getElementById('checkout-modal');
-    const checkoutSummary = document.getElementById('checkout-summary');
-    const checkoutForm = document.getElementById('checkout-form');
-  
-    // Function to show services in modal
-    const showServices = (services, title) => {
-      modalTitle.textContent = title;
-      servicesList.innerHTML = '';
-      services.forEach((service) => {
-        const serviceBox = document.createElement('div');
-        serviceBox.classList.add('service-box');
-        serviceBox.innerHTML = `
-          <img src="${service.image}" alt="${service.name}" />
-          <div class="service-name">${service.name}</div>
-          <div class="service-price">${service.price}</div>
-          <button>Add Item</button>
-        `;
-        serviceBox.querySelector('button').addEventListener('click', () => {
-          selectedServices.push(service);
-          // alert(`${service.name} added to checkout.`);
-        });
-        servicesList.appendChild(serviceBox);
-      });
-      serviceModal.style.display = 'flex';
-    };
-  
-    // Function to show checkout modal
-    const showCheckout = () => {
-      serviceModal.style.display = 'none';
-      checkoutSummary.innerHTML = selectedServices
-        .map((service) => `<p>${service.name} - ${service.price}</p>`)
-        .join('');
-      checkoutModal.style.display = 'flex';
-    };
-  
-    // Event listener for men's and women's services buttons
-    mensServicesButton.addEventListener('click', () => showServices(mensServices, "Men's Services"));
-    womensServicesButton.addEventListener('click', () => showServices(womensServices, "Women's Services"));
-  
-    // Show checkout when clicking the checkout button
-    document.querySelector('.checkout-btn').addEventListener('click', showCheckout);
-  
-    // Handle form submission (send booking info)
-    checkoutForm.addEventListener('submit', (event) => {
-      event.preventDefault();
-      alert('Your booking has been sent!');
-      checkoutModal.style.display = 'none';
-    });
-  
-    // Close any modal with the class 'close-btn'
-    const closeButtons = document.querySelectorAll('.close-btn');
-    closeButtons.forEach(button => {
-      button.addEventListener('click', () => {
-        const modal = button.closest('.modal');
-        if (modal) {
-          modal.style.display = 'none';
-        }
-      });
-    });
-  
-    // Optional: Close the modal if clicking outside of the modal content
-    window.addEventListener('click', (event) => {
-      if (event.target === serviceModal) {
-        serviceModal.style.display = 'none';
-      } else if (event.target === checkoutModal) {
-        checkoutModal.style.display = 'none';
-      }
-    });
+document.addEventListener("DOMContentLoaded", function () {
+  // Get modal and button elements
+  const serviceModal = document.getElementById("service-modal");
+  const checkoutModal = document.getElementById("checkout-modal");
+  const serviceCloseBtn = document.getElementById("service-close-btn");
+  const checkoutCloseBtn = document.getElementById("checkout-close-btn");
+  const addItemBtn = document.getElementById("add-item-btn");
+  const checkoutBtn = document.getElementById("checkout-btn");
+  const checkoutForm = document.getElementById("checkout-form");
+
+  // Track selected services
+  let selectedServices = [];
+
+  // Show Service Modal when a user clicks on "Book For Men" or "Book For Women"
+  document.getElementById("mens-services").addEventListener("click", function () {
+    openModal(serviceModal);
   });
+
+  document.getElementById("womens-services").addEventListener("click", function () {
+    openModal(serviceModal);
+  });
+
+  // Close service modal
+  serviceCloseBtn.addEventListener("click", function () {
+    closeModal(serviceModal);
+  });
+
+  // Close checkout modal
+  checkoutCloseBtn.addEventListener("click", function () {
+    closeModal(checkoutModal);
+  });
+
+  // Handle adding items
+  addItemBtn.addEventListener("click", function () {
+    // Get selected services from the checkboxes
+    const checkboxes = document.querySelectorAll(".service-checkbox:checked");
+    selectedServices = Array.from(checkboxes).map(checkbox => checkbox.dataset.serviceName);
+
+    // Show a message or update the UI
+    document.getElementById("checkout-summary").innerText = "Selected Services: " + selectedServices.join(", ");
+  });
+
+  // Handle Checkout button click
+  checkoutBtn.addEventListener("click", function () {
+    openModal(checkoutModal);
+  });
+
+  // Handle form submission
+  checkoutForm.addEventListener("submit", function (event) {
+    event.preventDefault();
+
+    // Get form data
+    const name = document.getElementById("name").value;
+    const contact = document.getElementById("contact").value;
+    const address = document.getElementById("address").value;
+
+    // Combine selected services and form data
+    const formData = {
+      name,
+      contact,
+      address,
+      services: selectedServices,
+    };
+
+    // Send data to the server
+    fetch("/send-email", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(formData),
+    })
+      .then(response => response.json())
+      .then(data => {
+        alert("Order successfully sent!");
+        closeModal(checkoutModal);
+        // Reset form and services
+        checkoutForm.reset();
+        selectedServices = [];
+      })
+      .catch(error => {
+        console.error("Error sending data:", error);
+        alert("Something went wrong. Please try again.");
+      });
+  });
+
+  // Helper functions to open and close modals
+  function openModal(modal) {
+    modal.style.display = "block";
+  }
+
+  function closeModal(modal) {
+    modal.style.display = "none";
+  }
+});

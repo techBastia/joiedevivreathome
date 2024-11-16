@@ -190,6 +190,11 @@ body {
       .name{
         margin: 0;
       }
+      .copyright{
+        @media(max-width: 767px){
+          text-align: center;
+        }
+      }
   }
   
   .modal {

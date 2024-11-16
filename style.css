@@ -201,6 +201,11 @@ body {
 .footer .name {
   margin: 0;
 }
+@media (max-width: 767px) {
+  .footer .copyright {
+    text-align: center;
+  }
+}
 
 .modal {
   position: fixed;

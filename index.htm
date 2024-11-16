@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <title>Joie De Vivre</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <!-- Header Section -->
+    <header class="header">
+      <div class="logo">Joie De Vivre</div>
+      <div class="actions">
+        <button class="book-appointment">Book Appointment</button>
+        <button class="contact-us">Contact Us</button>
+      </div>
+    </header>
+
+    <!-- Hero Section with Men and Women Images -->
+    <h1 class="heading">Book Appointment</h1>
+    <section class="hero">
+      <div class="service-option" id="mens-services">
+        <img src="./mens.webp" alt="Mens Services" />
+        <div class="overlay">Book For Men</div>
+      </div>
+      <div class="service-option" id="womens-services">
+        <img src="./womens.webp" alt="Womens Services" />
+        <div class="overlay">Book For Women</div>
+      </div>
+    </section>
+
+    <section class="about">
+      <h1 class="heading">About Us</h1>
+      <p>
+        At <span class="name">Joie De Vivre</span>, we believe that beauty is not just about
+        looking good—it’s about feeling amazing. Our salon and spa offer a
+        luxurious escape, where relaxation and rejuvenation come together with
+        expert care and top-tier service. Whether you're visiting us for a
+        refreshing facial, a stylish haircut, or a soothing massage, our goal is
+        simple: to help you look and feel your best.
+      </p>
+    </section>
+
+    <section class="visitUs_wrapper">
+    <h1 class="heading">Visit Us</h1>
+    <div class="visitUs">
+      <div class="address_box">
+        <p class="add">3rd floor, Innovate India, 668, 9th Main Rd, Sector 7, HSR Layout, Bengaluru, Karnataka 560102</p>
+        <p class="openTime">Open Timing: 10Am to 9Pm</p>
+        <a href="tel:09606966722" class="contact_button">Call Us Now</a>
+
+      </div>
+
+      <div class="address_box">
+        <p class="add">3rd floor, Innovate India, 668, 9th Main Rd, Sector 7, HSR Layout, Bengaluru, Karnataka 560102</p>
+        <p class="openTime">Open Timing: 10Am to 9Pm</p>
+        <a href="tel:09606966722" class="contact_button">Call Us Now</a>
+      </div>
+
+      <div class="address_box">
+        <p class="add">3rd floor, Innovate India, 668, 9th Main Rd, Sector 7, HSR Layout, Bengaluru, Karnataka 560102</p>
+        <p class="openTime">Open Timing: 10Am to 9Pm</p>
+        <a href="tel:09606966722" class="contact_button">Call Us Now</a>
+      </div>
+
+      <div class="address_box">
+        <p class="add">3rd floor, Innovate India, 668, 9th Main Rd, Sector 7, HSR Layout, Bengaluru, Karnataka 560102</p>
+        <p class="openTime">Open Timing: 10Am to 9Pm</p>
+        <a href="tel:09606966722" class="contact_button">Call Us Now</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="social">
+    <h1 class="heading">SOCIAL</h1>
+    <a href="https://www.instagram.com/joie.de.vivre.2023/" target="_blank">
+      <i class="fab fa-instagram"></i> 
+    </a>
+  </section>
+
+  <section class="footer">
+    <p class="name">Joie-de-Vivre</p>
+    <p>Copyright &copy; 2023 Joie de Vivre - All Rights Reserved.</p>
+  </section>
+    <!-- Service Popup Modal -->
+    <div class="modal" id="service-modal">
+      <div class="modal-content">
+        <span class="close-btn" id="service-close-btn">&times;</span>
+        <h2 id="modal-title">Services</h2>
+        <div class="services-list" id="services-list"></div>
+        <div class="modal-footer">
+          <button class="shop-more-btn">Shop More</button>
+          <button class="checkout-btn">Checkout</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Checkout Popup Modal -->
+    <div class="modal" id="checkout-modal">
+      <div class="modal-content">
+        <span class="close-btn" id="checkout-close-btn">&times;</span>
+        <h2>Checkout</h2>
+        <div id="checkout-summary"></div>
+        <form id="checkout-form">
+          <label for="name">Name:</label>
+          <input type="text" id="name" required />
+          <label for="contact">Contact Number:</label>
+          <input type="text" id="contact" required />
+          <label for="address">Address:</label>
+          <input type="text" id="address" />
+          <button type="submit" class="send-btn">Send</button>
+        </form>
+      </div>
+    </div>
+
+    <script src="script.js"></script>
+  </body>
+</html>

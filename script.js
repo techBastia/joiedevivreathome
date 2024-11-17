@@ -30,35 +30,39 @@ document.addEventListener("DOMContentLoaded", () => {
     },
     {
       name: "Cupping Massage E",
-      details: ["Upper body"],
+      details: ["Upper body", 
+        "cashbackOffer: 500"
+      ],
       mrp: "2499",
-      offerPrice: "1999",
+      offerPrice: "Only Cashback Available",
       image: "./male.PNG",
       cashbackOffer: "500"
     },
     {
       name: "Cupping Massage F",
-      details: ["Full body"],
+      details: ["Full body",
+        "cashbackOffer: 500"
+      ],
       mrp: "3499",
-      offerPrice: "2999",
+      offerPrice: "Only Cashback Available",
       image: "./male.PNG",
-      cashbackOffer: "500"
+      
     },
     {
       name: "Neuro Pain Relief Massage G",
-      details: ["Full body", "Time Duration - 110 min"],
+      details: ["Full body", "Time Duration - 110 min", "cashbackOffer: 550"],
       mrp: "2999",
-      offerPrice: "2499",
+      offerPrice: "Only Cashback Available",
       image: "./male.PNG",
-      cashbackOffer: "550"
+      
     },
     {
       name: "Deep Tissue Massage H",
-      details: ["Full body", "Time Duration - 75 min"],
+      details: ["Full body", "Time Duration - 75 min", "cashbackOffer: 400"],
       mrp: "2199",
-      offerPrice: "1799",
+      offerPrice: "Only Cashback Available",
       image: "./male.PNG",
-      cashbackOffer: "400"
+      
     }
   ];
 

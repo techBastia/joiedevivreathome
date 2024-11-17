@@ -47,14 +47,14 @@ document.addEventListener("DOMContentLoaded", () => {
       offerPrice: "1999",
     },
     {
-      name: "Raga Bubulgum Pedi & Meni - WC",
+      name: "Raga Bubble gum Pedi & Mani - WC",
       details: ["Pedi + Meni - 1999", "Cash back 500"],
       image: "./female.PNG",
       offerPrice: "1999",
     },
     {
-      name: "Aroma Mazic Pedi & Meni - WD",
-      details: ["Pedi + Meni - 1599", "Cash back 300"],
+      name: "Aroma Magic Pedi & Mani - WD",
+      details: ["Pedi + Mani - 1599", "Cash back 300"],
       image: "./female.PNG",
       offerPrice: "1599"
     },
@@ -62,9 +62,9 @@ document.addEventListener("DOMContentLoaded", () => {
       name: "Rica Roll-on Wax - WE",
       details: [
         "Half arms - 399",
-        "Full arm - 599",
-        "Half leg - 499",
-        "Full leg - 699",
+        "Full arms - 599",
+        "Half legs - 499",
+        "Full legs - 699",
         "Full body - 2699",
         "Under arm - 299",
         "Bikini wax (Brazilian stripless) - 1999",

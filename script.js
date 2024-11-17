@@ -70,7 +70,7 @@ document.addEventListener("DOMContentLoaded", () => {
     const name = document.getElementById("name");
     const contact = document.getElementById("contact")
     const address = document.getElementById("address")
-    await sendEmail(name.value, contact.value, address.value);
+    await sendEmail(name.value, contact.value, address.value,  selectedServices.map((e) => e.name));
     alert("Your booking has been sent!");
     checkoutModal.style.display = "none";
   });
@@ -97,7 +97,7 @@ document.addEventListener("DOMContentLoaded", () => {
 });
 
 
-async function sendEmail(name, contact_number, address) {
+async function sendEmail(name, contact_number, address, items) {
   const cloudFunctionUrl = "https://us-central1-serverless-web-apis-test.cloudfunctions.net/rashmiemail"
   try {
     const response = await fetch(
@@ -105,7 +105,7 @@ async function sendEmail(name, contact_number, address) {
       {
         method: "POST",
         body: JSON.stringify({
-          name, contact_number, address, items: selectedServices.map((e) => e.name)
+          name, contact_number, address, items
         }),
         headers: {
           "Content-Type": "application/json"  

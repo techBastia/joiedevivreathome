@@ -17,6 +17,12 @@ body {
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
   height: 60px;
 }
+@media (max-width: 767px) {
+  .header {
+    padding: 10px;
+    justify-content: start;
+  }
+}
 .header .logo {
   font-size: 24px;
   font-weight: bold;
@@ -29,11 +35,6 @@ body {
 .header .lists {
   display: flex;
   gap: 20px;
-}
-@media (max-width: 767px) {
-  .header .lists {
-    gap: 30px;
-  }
 }
 .header .lists p a {
   margin: 0;

@@ -70,7 +70,7 @@ document.addEventListener("DOMContentLoaded", () => {
     const name = document.getElementById("name");
     const contact = document.getElementById("contact")
     const address = document.getElementById("address")
-    await sendEmail(name.value, contact.value, address.value); 
+    await sendEmail(name.value, contact.value, address.value);
     alert("Your booking has been sent!");
     checkoutModal.style.display = "none";
   });
@@ -106,7 +106,10 @@ async function sendEmail(name, contact_number, address) {
         method: "POST",
         body: JSON.stringify({
           name, contact_number, address
-        })
+        }),
+        headers: {
+          "Content-Type": "application/json"  
+        }
       }
     )
     if (response.ok) {

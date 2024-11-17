@@ -64,6 +64,17 @@ document.addEventListener("DOMContentLoaded", () => {
 
   const womensServices = [
     {
+      name: "Swedish/Kerla massage-WA",
+      details: [
+        "Time Duration 60 min",
+        "MRP 2499",
+        "Offer price 1499",
+        "Cash back 400"
+      ],
+      image: "./female.PNG",
+      offerPrice: "Only Cashback Available"
+    },
+    {
       name: "Rica Wax - WB",
       details: [
         "Half arms - 299",

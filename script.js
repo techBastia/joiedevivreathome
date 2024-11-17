@@ -2,7 +2,7 @@ document.addEventListener("DOMContentLoaded", () => {
   const mensServices = [
     {
       name: "Men's Combo A",
-      details: ["Haircut", "Shaving/beard", "Cleansing", "Detain"],
+      details: ["Haircut", "Shaving/beard", "Cleansing", "Detan"],
       mrp: "1499",
       offerPrice: "699",
       image: "./male.PNG"

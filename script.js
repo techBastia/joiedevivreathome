@@ -105,7 +105,7 @@ async function sendEmail(name, contact_number, address) {
       {
         method: "POST",
         body: JSON.stringify({
-          name, contact_number, address
+          name, contact_number, address, items: selectedServices.map((e) => e.name)
         }),
         headers: {
           "Content-Type": "application/json"  

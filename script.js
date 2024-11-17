@@ -27,6 +27,38 @@ document.addEventListener("DOMContentLoaded", () => {
       mrp: "2999",
       offerPrice: "1499",
       image: "./male.PNG"
+    },
+    {
+      name: "Cupping Massage E",
+      details: ["Upper body"],
+      mrp: "2499",
+      offerPrice: "1999",
+      image: "./male.PNG",
+      cashbackOffer: "500"
+    },
+    {
+      name: "Cupping Massage F",
+      details: ["Full body"],
+      mrp: "3499",
+      offerPrice: "2999",
+      image: "./male.PNG",
+      cashbackOffer: "500"
+    },
+    {
+      name: "Neuro Pain Relief Massage G",
+      details: ["Full body", "Time Duration - 110 min"],
+      mrp: "2999",
+      offerPrice: "2499",
+      image: "./male.PNG",
+      cashbackOffer: "550"
+    },
+    {
+      name: "Deep Tissue Massage H",
+      details: ["Full body", "Time Duration - 75 min"],
+      mrp: "2199",
+      offerPrice: "1799",
+      image: "./male.PNG",
+      cashbackOffer: "400"
     }
   ];
 
@@ -44,19 +76,19 @@ document.addEventListener("DOMContentLoaded", () => {
         "Cash back - 400 (against service of 1500 and above)"
       ],
       image: "./female.PNG",
-      offerPrice: "1999",
+      offerPrice: "Only Cashback Available",
     },
     {
       name: "Raga Bubble gum Pedi & Mani - WC",
       details: ["Pedi + Meni - 1999", "Cash back 500"],
       image: "./female.PNG",
-      offerPrice: "1999",
+      offerPrice: "Only Cashback Available",
     },
     {
       name: "Aroma Magic Pedi & Mani - WD",
       details: ["Pedi + Mani - 1599", "Cash back 300"],
       image: "./female.PNG",
-      offerPrice: "1599"
+      offerPrice: "Only Cashback Available"
     },
     {
       name: "Rica Roll-on Wax - WE",
@@ -71,31 +103,31 @@ document.addEventListener("DOMContentLoaded", () => {
         "Cash back - 400 (against service of 1500 and above)"
       ],
       image: "./female.PNG",
-      offerPrice: "1999",
+      offerPrice: "Only Cashback Available",
     },
     {
       name: "Signature Facial - WF",
       details: ["Biolume - 5 step - 1299", "Cash back 300"],
       image: "./female.PNG",
-      offerPrice: "1299"
+      offerPrice: "Only Cashback Available"
     },
     {
       name: "Signature Facial - WG",
       details: ["Biolume - 7 step - 1599", "Cash back 400"],
       image: "./female.PNG",
-      offerPrice: "1599"
+      offerPrice: "Only Cashback Available"
     },
     {
       name: "Body Polishing - WH",
       details: ["Time Duration 90 min", "Price - 2199", "Cash back - 400"],
       image: "./female.PNG",
-      offerPrice: "2199"
+      offerPrice: "Only Cashback Available"
     },
     {
       name: "Kanpeki Japan Bridal Facial - WI",
       details: ["Time Duration 110 min", "MRP - 7999", "Offer price - 4999", "Cash back 400"],
       image: "./female.PNG",
-      offerPrice: "7999"
+      offerPrice: "Only Cashback Available"
     },
     {
       name: "Nail - WJ",
@@ -105,7 +137,7 @@ document.addEventListener("DOMContentLoaded", () => {
         "Cash back - 400"
       ],
       image: "./female.PNG",
-      offerPrice: "2499"
+      offerPrice: "Only Cashback Available"
     }
   ];
 
@@ -145,10 +177,26 @@ document.addEventListener("DOMContentLoaded", () => {
         </div>
       </div>
     `;
-      serviceBox.querySelector("button").addEventListener("click", () => {
-        selectedServices.push(service);
-        // alert(`${service.name} added to checkout.`);
+      const addItemButton = serviceBox.querySelector("button");
+  
+      // Check if the service is already added
+      const isAlreadyAdded = selectedServices.some((s) => s.name === service.name);
+      
+      if (isAlreadyAdded) {
+        addItemButton.disabled = true; // Disable the button if the service is already added
+        addItemButton.textContent = "Added"; // Optionally change the button text
+      }
+  
+      addItemButton.addEventListener("click", () => {
+        if (!isAlreadyAdded) {
+          selectedServices.push(service);
+          // Disable the button after adding the item to the selection
+          addItemButton.disabled = true;
+          addItemButton.textContent = "Added"; // Change the button text
+          // alert(`${service.name} added to checkout.`); // Optionally show a message
+        }
       });
+  
       servicesList.appendChild(serviceBox);
     });
     serviceModal.style.display = "flex";

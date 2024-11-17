@@ -91,3 +91,28 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   });
 });
+
+
+async function sendEmail(name, contact_number, address) {
+  const cloudFunctionUrl = "https://us-central1-serverless-web-apis-test.cloudfunctions.net/rashmiemail"
+  try {
+    const response = await fetch(
+      cloudFunctionUrl,
+      {
+        method: "POST",
+        body: JSON.stringify({
+          name, contact_number, address
+        })
+      }
+    )
+    if (response.ok) {
+      return true;
+    }
+    return false;
+
+  } catch (error) {
+    console.log(error);
+    return false;
+
+  }
+}

@@ -65,8 +65,12 @@ document.addEventListener("DOMContentLoaded", () => {
     .addEventListener("click", showCheckout);
 
   // Handle form submission (send booking info)
-  checkoutForm.addEventListener("submit", (event) => {
+  checkoutForm.addEventListener("submit", async (event) => {
     event.preventDefault();
+    const name = document.getElementById("name");
+    const contact = document.getElementById("contact")
+    const address = document.getElementById("address")
+    await sendEmail(name.value, contact.value, address.value); 
     alert("Your booking has been sent!");
     checkoutModal.style.display = "none";
   });

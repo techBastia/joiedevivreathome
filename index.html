@@ -13,28 +13,31 @@
   <body>
     <!-- Header Section -->
     <header class="header">
-      <div class="logo">Joie-De-Vivre</div>
-      <div class="actions">
-        <button class="contact-us">
-          <a href="tel:09606966722" class="contact_button">Call Us Now</a>
-        </button>
+      <div class="logo">
+        <img src="./logo.PNG" alt="logo">
+      </div>
+      <div class="lists">
+        <p><a href="#about-us">About Us</a></p>
+        <p><a href="#branches">Our Branches</a></p>
+        <p><a href="#follow">Follow Us</a></p>
+      </div>
       </div>
     </header>
 
     <!-- Hero Section with Men and Women Images -->
-    <h1 class="heading">@Home Service</h1>
+    <h1 class="heading home_service">SALON AT HOME</h1>
     <section class="hero">
       <div class="service-option" id="mens-services">
-        <img src="./mens.webp" alt="Mens Services" />
-        <div class="overlay">Book For Men</div>
+        <img src="./mens.PNG" alt="Mens Services" />
+        <div class="overlay mens">Book For Men</div>
       </div>
       <div class="service-option" id="womens-services">
-        <img src="./womens.webp" alt="Womens Services" />
-        <div class="overlay">Book For Women</div>
+        <img src="./womens.PNG" alt="Womens Services" />
+        <div class="overlay womens">Book For Women</div>
       </div>
     </section>
 
-    <section class="about">
+    <section class="about" id="about-us">
       <h1 class="heading">About Us</h1>
       <p>
         @ <span class="name">Joie De Vivre</span> means "the joy
@@ -45,12 +48,12 @@
       </p>
     </section>
 
-    <section class="visitUs_wrapper">
-      <h1 class="heading">Visit Us</h1>
+    <section class="visitUs_wrapper" id="branches">
+      <h1 class="heading">@Branch Services</h1>
       <div class="visitUs">
         <div class="address_box">
           <p class="add">
-            3rd floor, Innovate India, 668, 9th Main Rd, Sector 7, HSR Layout,
+            3rd floor, 668, 9th Main Rd, Sector 7, HSR Layout,
             Bengaluru, Karnataka 560102 no
           </p>
           <p class="openTime">Open Timing: 10Am to 9Pm</p>
@@ -86,7 +89,7 @@
       </div>
     </section>
 
-    <section class="social">
+    <section class="social" id="follow">
       <h1 class="heading">SOCIAL</h1>
       <a href="https://www.instagram.com/joie.de.vivre.2023/" target="_blank">
         <i class="fab fa-instagram"></i>
@@ -107,7 +110,6 @@
         <h2 id="modal-title">Services</h2>
         <div class="services-list" id="services-list"></div>
         <div class="modal-footer">
-          <button class="shop-more-btn">Shop More</button>
           <button class="checkout-btn">Checkout</button>
         </div>
       </div>

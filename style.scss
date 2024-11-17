@@ -113,6 +113,9 @@ body {
       padding: 0.5rem 1rem;
       font-size: 1.5rem;
       border-radius: 0 0  10px 10px;
+      @media (min-width: 768px) and (max-width: 990px) {
+        width: 92%;
+        }
       &.mens{
         background: #dd60a4;
       }
@@ -162,6 +165,9 @@ body {
     height: 100%;
     padding-bottom: 40px;
   }
+  @media (min-width: 768px) and (max-width: 990px) {
+  height: 500px;
+  }
 
   .visitUs {
     display: flex;
@@ -186,6 +192,16 @@ body {
       @media(max-width: 767px){
         width: 90%;
       }
+      @media (min-width: 768px) and (max-width: 990px) {
+        height: 320px;
+        justify-content: start;
+        }
+        .add{
+          @media (min-width: 768px) and (max-width: 990px) {
+            height: 150px;
+            justify-content: start;
+            }
+        }
       .openTime {
         padding-bottom: 20px;
       }

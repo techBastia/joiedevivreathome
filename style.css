@@ -122,6 +122,11 @@ body {
   font-size: 1.5rem;
   border-radius: 0 0 10px 10px;
 }
+@media (min-width: 768px) and (max-width: 990px) {
+  .hero .service-option .overlay {
+    width: 92%;
+  }
+}
 .hero .service-option .overlay.mens {
   background: #dd60a4;
 }
@@ -175,6 +180,11 @@ body {
     padding-bottom: 40px;
   }
 }
+@media (min-width: 768px) and (max-width: 990px) {
+  .visitUs_wrapper {
+    height: 500px;
+  }
+}
 .visitUs_wrapper .visitUs {
   display: flex;
   flex-direction: row;
@@ -202,6 +212,18 @@ body {
 @media (max-width: 767px) {
   .visitUs_wrapper .visitUs .address_box {
     width: 90%;
+  }
+}
+@media (min-width: 768px) and (max-width: 990px) {
+  .visitUs_wrapper .visitUs .address_box {
+    height: 320px;
+    justify-content: start;
+  }
+}
+@media (min-width: 768px) and (max-width: 990px) {
+  .visitUs_wrapper .visitUs .address_box .add {
+    height: 150px;
+    justify-content: start;
   }
 }
 .visitUs_wrapper .visitUs .address_box .openTime {

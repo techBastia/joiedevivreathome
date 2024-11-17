@@ -4,7 +4,7 @@ document.addEventListener("DOMContentLoaded", () => {
       name: "Men's Combo A",
       details: ["Haircut", "Shaving/beard", "Cleansing", "Detain"],
       mrp: "1499",
-      offerPrice: "599",
+      offerPrice: "699",
       image: "./male.PNG"
     },
     {

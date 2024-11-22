@@ -171,51 +171,66 @@ document.addEventListener("DOMContentLoaded", () => {
   const showServices = (services, title) => {
     modalTitle.textContent = title;
     servicesList.innerHTML = "";
+    
     services.forEach((service) => {
       const serviceBox = document.createElement("div");
       serviceBox.classList.add("service-box");
       serviceBox.innerHTML = `
-      <div class="service-box-content">
-        <div class="service-image">
-          <img src="${service.image}" alt="${service.name}" style="width: 100%; height: auto;" />
+        <div class="service-box-content">
+          <div class="service-image">
+            <img src="${service.image}" alt="${service.name}" style="width: 100%; height: auto;" />
+          </div>
+          <div class="service-info" style="flex: 1;">
+            <div class="service-name">${service.name}</div>
+            <div class="service-details">${service.details.join("<br/>")}</div>
+            ${
+              service.mrp
+                ? `<div class="service-mrp">MRP: ${service.mrp}</div>`
+                : ""
+            }
+            <div class="service-price">Offer Price: ${service.offerPrice}</div>
+            <button>Add Item</button>
+          </div>
         </div>
-        <div class="service-info" style="flex: 1;">
-          <div class="service-name">${service.name}</div>
-          <div class="service-details">${service.details.join("<br/>")}</div>
-          ${
-            service.mrp
-              ? `<div class="service-mrp">MRP: ${service.mrp}</div>`
-              : ""
-          }
-          <div class="service-price">Offer Price: ${service.offerPrice}</div>
-          <button>Add Item</button>
-        </div>
-      </div>
-    `;
-      const addItemButton = serviceBox.querySelector("button");
+      `;
   
-      // Check if the service is already added
+      const addItemButton = serviceBox.querySelector("button");
+    
+      // Check if the item is already added
       const isAlreadyAdded = selectedServices.some((s) => s.name === service.name);
       
       if (isAlreadyAdded) {
-        addItemButton.disabled = true; // Disable the button if the service is already added
-        addItemButton.textContent = "Added"; // Optionally change the button text
+        // Style the button as 'Added'
+        addItemButton.disabled = true;
+        addItemButton.textContent = "Added";
+        addItemButton.style.backgroundColor = "#ff5733";  // Set background to red
+        addItemButton.style.color = "white";          // Set text color to white
       }
-  
+    
       addItemButton.addEventListener("click", () => {
         if (!isAlreadyAdded) {
+          // Add the service to the selected services list
           selectedServices.push(service);
-          // Disable the button after adding the item to the selection
+  
+          // Disable the button and update its text
           addItemButton.disabled = true;
-          addItemButton.textContent = "Added"; // Change the button text
-          // alert(`${service.name} added to checkout.`); // Optionally show a message
+          addItemButton.textContent = "Added";
+  
+          // Change button styles to red background and white text
+          addItemButton.style.backgroundColor = "#ff5733";
+          addItemButton.style.color = "white";
         }
       });
-  
+    
+      // Append the service box to the list
       servicesList.appendChild(serviceBox);
     });
+  
+    // Apply background color change when services are displayed
+    document.body.style.backgroundColor = "#d3d3d3"; // Set to desired background color
     serviceModal.style.display = "flex";
   };
+  
 
   // Function to show checkout modal
   const showCheckout = () => {

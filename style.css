@@ -352,11 +352,17 @@ body {
   justify-content: center;
 }
 .modal .modal-content .modal-footer button {
-  background-color: #007aff;
+  background-color: #e4405f;
   border: none;
   color: white;
   padding: 0.5rem 1rem;
   cursor: pointer;
+  position: fixed;
+  bottom: 0px;
+  /* left: 33%; */
+  width: 384px;
+  padding: 19px 0;
+  border-radius: 10px;
 }
 
 #checkout-modal form {
@@ -374,7 +380,7 @@ body {
 }
 #checkout-modal form .send-btn {
   margin-top: 1rem;
-  background-color: #28a745;
+  background-color: #e4405f;
   border: none;
   color: white;
   padding: 0.5rem;

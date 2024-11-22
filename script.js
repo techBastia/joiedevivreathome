@@ -203,7 +203,7 @@ document.addEventListener("DOMContentLoaded", () => {
         // Style the button as 'Added'
         addItemButton.disabled = true;
         addItemButton.textContent = "Added";
-        addItemButton.style.backgroundColor = "#ff5733";  // Set background to red
+        addItemButton.style.backgroundColor = "#e4405f";  // Set background to red
         addItemButton.style.color = "white";          // Set text color to white
       }
     
@@ -217,7 +217,7 @@ document.addEventListener("DOMContentLoaded", () => {
           addItemButton.textContent = "Added";
   
           // Change button styles to red background and white text
-          addItemButton.style.backgroundColor = "#ff5733";
+          addItemButton.style.backgroundColor = "#e4405f";
           addItemButton.style.color = "white";
         }
       });
